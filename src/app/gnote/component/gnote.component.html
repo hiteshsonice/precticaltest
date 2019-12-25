@@ -1,0 +1,42 @@
+<!-- Image and text -->
+<nav class="navbar navbar-light bg-light border-bottom">
+    <a class="navbar-brand" href="#">
+        G Notes
+    </a>
+    <div class="navbar-text">
+        {{userDetails?.Name}}
+        <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="logout()">
+            Logout
+        </button>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <ul class="list-group">
+                <li *ngFor="let item of noteList" class="list-group-item rounded-0">
+                    <button type="button cursor-pointer" class="close" title="Delete" (click)="deleteNote(item)">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="cursor-pointer" (click)="editDetail(item)">
+                        <h5>{{item?.title}}</h5>
+                        <span>{{item?.body}}</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-12 mt-2">
+                    <button type="button" class="btn btn-outline-dark float-right" *ngIf="!isAddNote"
+                        (click)="addNote()"><b>+</b>Add
+                        Note</button>
+                </div>
+            </div>
+            <div class="alert alert-success mt-2" *ngIf="message">
+                <strong>Success!</strong> {{message}}
+            </div>
+            <gnote-detail (hasSave)="hasSave($event)" *ngIf="isAddNote" [note]="note"></gnote-detail>
+        </div>
+    </div>
+</div>
