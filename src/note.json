@@ -9,24 +9,9 @@
   ],
   "notes": [
     {
-      "title": "Test11",
-      "body": "Test",
+      "title": "Title 1",
+      "body": "Test Body",
       "id": 1
-    },
-    {
-      "title": "gfgfd",
-      "body": "fgfdgfd cgfdgfdgfd",
-      "id": 3
-    },
-    {
-      "title": "This is test Note 1",
-      "body": "This is test Note 1",
-      "id": 4
-    },
-    {
-      "title": "This is test Note",
-      "body": "This is test Note",
-      "id": 5
     }
   ]
 }
